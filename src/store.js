@@ -5,22 +5,25 @@ import axios from 'axios'
 Vue.use(vuex, axios)
 
 export default new vuex.Store({
-    state: {
-        posts: []
-    },
-    actions: {
-        loadPosts ({ commit }) {
-            axios
-                .get('https://jsonplaceholder.typicode.com/posts')
-                .then(response =>  {
-                    console.log(response)
-                })
-                .catch(error => {
-
-                })
-        }
-    },
-    mutations: {
-
+  state: {
+    posts: []
+  },
+  actions: {
+    loadPosts({ commit }) {
+      axios
+        .get('https://jsonplaceholder.typicode.com/posts')
+        .then(response => {
+          let posts = response.data
+          commit('SET_POSTS', posts)
+        })
+        .catch(error => {
+ 
+        })
     }
+  },
+  mutations: {
+    SET_POSTS (state, posts) {
+      state.posts = posts
+    }
+  }
 })
