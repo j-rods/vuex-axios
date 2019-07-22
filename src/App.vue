@@ -1,17 +1,15 @@
 <template>
   <div id="app">
-    {{ msg }}
+    {{ this.$store.state.test }}
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
   data: function () {
     return {
-      msg: "hello"
     }
   }
 }
