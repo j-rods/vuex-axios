@@ -6,6 +6,21 @@ Vue.use(vuex, axios)
 
 export default new vuex.Store({
     state: {
-        test: 'Hello this is test'
+        posts: []
+    },
+    actions: {
+        loadPosts ({ commit }) {
+            axios
+                .get('https://jsonplaceholder.typicode.com/posts')
+                .then(response =>  {
+                    console.log(response)
+                })
+                .catch(error => {
+
+                })
+        }
+    },
+    mutations: {
+
     }
 })

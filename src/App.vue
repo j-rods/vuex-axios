@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    {{ this.$store.state.test }}
+    
   </div>
 </template>
 
@@ -8,10 +8,9 @@
 
 export default {
   name: 'app',
-  data: function () {
-    return {
+    mounted() {
+      this.$store.dispatch('loadPosts')
     }
-  }
 }
 </script>
 
