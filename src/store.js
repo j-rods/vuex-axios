@@ -17,7 +17,7 @@ export default new vuex.Store({
           commit('SET_POSTS', posts)
         })
         .catch(error => {
- 
+          console.log(error)
         })
     }
   },

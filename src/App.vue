@@ -8,13 +8,15 @@
 import { mapState } from 'vuex'
 
 export default {
-
   name: 'app',
-    computed: {
-      ...mapState([
-          'posts'
-      ])
-    }
+  mounted () {
+    this.$store.dispatch('loadPosts')
+  },
+  computed: {
+    ...mapState([
+        'posts'
+    ])
+  }
 }
 </script>
 
