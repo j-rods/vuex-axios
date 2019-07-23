@@ -5,6 +5,7 @@
         <v-card>
           <v-toolbar color="pink" dark>
             <v-toolbar-side-icon></v-toolbar-side-icon>
+            <v-toolbar-title>Posts</v-toolbar-title>
             <v-spacer></v-spacer>
             <v-btn icon>
               <v-icon>search</v-icon>
