@@ -1,4 +1,4 @@
-import shopApi from '../../api/posts/index'
+import posts from '../../api/posts/index'
 
 const state = {
   posts: [],
@@ -6,9 +6,9 @@ const state = {
 
 const actions = {
   loadPosts({ commit }) {
-    axios
-      .get('https://jsonplaceholder.typicode.com/posts')
+    posts.get()
       .then(response => {
+        console.log(response)
         let posts = response.data
         commit('SET_POSTS', posts)
       })
