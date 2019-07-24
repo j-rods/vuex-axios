@@ -37,14 +37,14 @@ import { mapState } from 'vuex'
 
 export default {
   name: 'app',
-  created() {
+  mounted() {
     console.log(this.$store)
-    this.$store.dispatch('posts/loadPosts')
+    // this.$store.dispatch('posts/loadPosts')
     console.log(this)
   },
-  computed:  {
-    ...mapState(['posts'])
-  },
+  // computed:  {
+  //   ...mapState(['posts'])
+  // },
   methods: {
     toggle(index) {
       const i = this.selected.indexOf(index)
