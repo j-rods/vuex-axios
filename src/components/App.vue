@@ -37,10 +37,12 @@ import { mapState } from 'vuex'
 
 export default {
   name: 'app',
-  mounted() {
-    this.$store.dispatch('loadPosts')
+  created() {
+    console.log(this.$store)
+    this.$store.dispatch('posts/loadPosts')
+    console.log(this)
   },
-  computed: {
+  computed:  {
     ...mapState(['posts'])
   },
   methods: {
