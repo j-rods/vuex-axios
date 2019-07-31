@@ -41,17 +41,17 @@ export default {
     console.log(this.$store)
     // this.$store.dispatch('posts/loadPosts')
     console.log(this)
-    // this.loadPosts()
+    this.loadPosts()
   },
-  // computed:  {
-  //   ...mapState({
-  //     posts: state => state.posts.posts
-  //   })
-  // },
+  computed:  {
+    ...mapState({
+      posts: state => state.posts.posts
+    })
+  },
   methods: {
-    // loadPosts() {
-    //   this.$store.dispatch('posts/loadPosts')
-    // },
+    loadPosts() {
+      this.$store.dispatch('posts/loadPosts')
+    },
     toggle(index) {
       const i = this.selected.indexOf(index)
       if (i > -1) {
