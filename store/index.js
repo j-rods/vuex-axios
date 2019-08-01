@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
-import posts from '@/modules/posts'
+import posts from '@/modules/posts/posts'
 
 Vue.use(Vuex, axios)
 
