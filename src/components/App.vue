@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState } from 'vuex';
 
 export default {
   name: 'app',
@@ -53,15 +53,15 @@ export default {
       this.$store.dispatch('posts/loadPosts')
     },
     toggle(index) {
-      const i = this.selected.indexOf(index)
+      const i = this.selected.indexOf(index);
       if (i > -1) {
-        this.selected.splice(i, 1)
+        this.selected.splice(i, 1);
       } else {
         this.selected.push(index);
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style>
