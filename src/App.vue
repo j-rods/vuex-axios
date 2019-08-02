@@ -33,27 +33,31 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
-
+import { mapState } from 'vuex'
 export default {
   name: 'app',
   mounted() {
-    this.$store.dispatch('loadPosts');
+    this.loadPosts()
   },
-  computed: {
-    ...mapState(['posts']),
+  computed:  {
+    ...mapState({
+      posts: state => state.posts.posts
+    })
   },
   methods: {
+    async loadPosts() {
+      await this.$store.dispatch('posts/loadPosts')
+    },
     toggle(index) {
-      const i = this.selected.indexOf(index);
+      const i = this.selected.indexOf(index)
       if (i > -1) {
-        this.selected.splice(i, 1);
+        this.selected.splice(i, 1)
       } else {
         this.selected.push(index);
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <style>
