@@ -1,14 +1,14 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import axios from 'axios'
-import posts from './modules/posts/posts.js'
+import Vue from 'vue';
+import Vuex from 'vuex';
+import axios from 'axios';
+import posts from './modules/posts/posts';
 
- Vue.use(Vuex, axios)
+Vue.use(Vuex, axios);
 
- const store = new Vuex.Store({
-    modules: {
-        posts
-    }
-})
+const store = new Vuex.Store({
+  modules: {
+    posts,
+  },
+});
 
- export default store; 
+export default store;
