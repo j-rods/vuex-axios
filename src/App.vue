@@ -33,14 +33,10 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
-
+import { mapState } from 'vuex'
 export default {
   name: 'app',
   mounted() {
-    console.log(this.$store)
-    // this.$store.dispatch('posts/loadPosts')
-    console.log(this)
     this.loadPosts()
   },
   computed:  {
@@ -49,19 +45,19 @@ export default {
     })
   },
   methods: {
-    loadPosts() {
-      this.$store.dispatch('posts/loadPosts')
+    async loadPosts() {
+      await this.$store.dispatch('posts/loadPosts')
     },
     toggle(index) {
-      const i = this.selected.indexOf(index);
+      const i = this.selected.indexOf(index)
       if (i > -1) {
-        this.selected.splice(i, 1);
+        this.selected.splice(i, 1)
       } else {
         this.selected.push(index);
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <style>
